@@ -1,0 +1,36 @@
+Differences Between HTTP/1.1 and HTTP/2;
+      In the world of web development, HTTP (HyperText Transfer Protocol) is the foundation of communication between clients (browsers) and servers. Over the years, HTTP has gone through several revisions to improve performance, security, and overall efficiency. In the world of web development, HTTP (HyperText Transfer Protocol) is the foundation of communication between clients (browsers) and servers. Over the years, HTTP has gone through several revisions to improve performance, security, and overall efficiency. 
+      The two most commonly used versions today are HTTP/1.1 and HTTP/2.
+      While both serve the same basic function—facilitating the transfer of data between the client and server—they differ significantly in terms of architecture, performance, and features. This blog post aims to explore the differences between HTTP/1.1 and HTTP/2, highlighting key aspects such as speed, multiplexing, header compression, and other enhancement . 
+
+History of http versions;
+HTTP/1.1:
+      Released in 1997, HTTP/1.1 became the most widely adopted version. It improved performance with persistent connections and pipelining, allowing multiple requests to be sent over the same connection.
+      Despite these enhancements, HTTP/1.1 still has several limitations that HTTP/2 aims to address.
+HTTP/2:
+      Standardized in 2015, HTTP/2 aimed to optimize the limitations of HTTP/1.1, with a focus on reducing latency, improving loading times, and enabling more efficient communication between client and server.
+
+Header Compression;
+HTTP/1.1: 
+      In HTTP/1.1, headers are sent as plain text in each request and response.
+      This can result in redundant data being sent multiple times, especially when similar headers (such as cookies or authorization tokens) are included in every request.
+HTTP/2:
+      HTTP/2 uses a feature called HPACK (Header Compression for HTTP/2) to compress HTTP headers efficiently.
+      HPACK uses a combination of static and dynamic tables to replace repetitive header fields with smaller, indexed representations.
+      This reduces the size of header data sent with each request, thus improving performance and reducing the amount of data transferred.
+
+Server Push;
+HTTP/1.1:
+      In HTTP/1.1, the server responds only to client requests. 
+      The client must explicitly request each resource, even if the server knows the client will need it (e.g., images, CSS files, JavaScript).
+HTTP/2: 
+      HTTP/2 allows the server to anticipate client needs and "push" additional resources to the client proactively. 
+      For example, if a client requests an HTML page, the server can push the associated CSS and JavaScript files at the same time, without waiting for the client to request them. 
+      This can speed up page load times by reducing the number of round-trips required.
+
+Security system;
+HTTP/1.1: 
+      While HTTP/1.1 can be used over both encrypted (HTTPS) and unencrypted (HTTP) channels, it’s more common today to use HTTP/1.1 over HTTPS, especially due to security concerns with unencrypted HTTP traffic.
+HTTP/2:
+      HTTP/2 is supported by all major browsers, including Chrome, Firefox, Safari, and Edge. 
+      It is also supported by many popular web servers like Apache, Nginx, and IIS. However, HTTP/2 requires SSL/TLS encryption, so it is commonly used only on secure websites (i.e., those that use HTTPS).
